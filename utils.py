@@ -1,52 +1,8 @@
 import torch
-from torchvision import datasets, transforms
 from tqdm.auto import tqdm
 import matplotlib.pyplot as plt
 
 
-# Data
-transform = {
-    'train': transforms.Compose([
-        transforms.RandomApply([transforms.CenterCrop(22)], p=0.1),
-        transforms.Resize((28, 28)),
-        transforms.RandomRotation((-15., 15.), fill=0),
-        transforms.ToTensor(),
-        transforms.Normalize((0.1307,), (0.3081,)),
-    ]),
-    'test': transforms.Compose([
-        transforms.ToTensor(),
-        transforms.Normalize((0.1307,), (0.3081,)),
-    ]),
-}
-
-dataset = {
-    'train': datasets.MNIST(
-        '../data',
-        train=True,
-        download=True,
-        transform=transform['train'],
-    ),
-    'test': datasets.MNIST(
-        '../data',
-        train=False,
-        download=False,
-        transform=transform['test'],
-    ),
-}
-
-def inspect_batch(dataloader):
-    batch_data, batch_label = next(iter(dataloader)) 
-    fig = plt.figure()
-    for i in range(12):
-        plt.subplot(3, 4, i+1)
-        plt.tight_layout()
-        plt.imshow(batch_data[i].squeeze(0), cmap='gray')
-        plt.title(batch_label[i].item())
-        plt.xticks([])
-        plt.yticks([])
-
-
-# Train
 train_losses = []
 test_losses = []
 train_acc = []
@@ -57,8 +13,10 @@ test_incorrect_pred = {
     'predicted_vals': [],
 }
 
+
 def GetCorrectPredCount(pPrediction, pLabels):
     return pPrediction.argmax(dim=1).eq(pLabels).sum().item()
+
 
 def train(model, device, train_loader, optimizer, criterion):
     model.train()
@@ -96,6 +54,7 @@ def train(model, device, train_loader, optimizer, criterion):
     train_acc.append(100*correct/processed)
     train_losses.append(train_loss/len(train_loader))
 
+
 def test(model, device, test_loader, criterion):
     model.eval()
 
@@ -119,6 +78,7 @@ def test(model, device, test_loader, criterion):
         test_loss, correct, len(test_loader.dataset),
         100. * correct / len(test_loader.dataset)))
 
+
 def plot_results():
     fig, axs = plt.subplots(2, 2, figsize=(15, 10))
     plt.setp(axs, xticks=range(0, 21, 5))
@@ -135,3 +95,15 @@ def plot_results():
     axs[1, 1].set_title("Test Accuracy")
     axs[1, 1].axhline(y=100, color='r', linestyle='dotted')
     plt.show()
+
+
+def inspect_batch(dataloader):
+    batch_data, batch_label = next(iter(dataloader)) 
+    fig = plt.figure()
+    for i in range(12):
+        plt.subplot(3, 4, i+1)
+        plt.tight_layout()
+        plt.imshow(batch_data[i].squeeze(0), cmap='gray')
+        plt.title(batch_label[i].item())
+        plt.xticks([])
+        plt.yticks([])
