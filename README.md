@@ -15,10 +15,20 @@ git clone https://github.com/woncoh1/era1a5.git
 # Modules
 - `model.py`
 - `utils.py`
-  - Dataset
-  - Trainer
+  - Data
+    - `transform`: image transformations for the MNIST dataset
+    - `dataset`: MNIST training and testing datasets
+    - `inspect_batch()`: view a sample of a batch of the training dataset
+  - Train
+    - `train()`: train for one epoch on the training set
+    - `test()`: test using the testing set
+    - `plot_results()`: plot the training and testing loss and accuracy for each epoch
 
-# Model
+
+# Sample images
+![mnist_sample](https://github.com/woncoh1/era1a5/assets/12987758/a1713d31-14fb-4345-91a1-bd1e2875b7bf)
+
+# Model summary
 ```
 ----------------------------------------------------------------
         Layer (type)               Output Shape         Param #
@@ -42,3 +52,6 @@ Params size (MB): 2.26
 Estimated Total Size (MB): 3.03
 ----------------------------------------------------------------  
 ```
+
+# Training results
+![training_results](https://github.com/woncoh1/era1a5/assets/12987758/babac61a-3e4b-46ae-8fb7-b077acea1d31)
