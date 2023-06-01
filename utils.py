@@ -34,26 +34,8 @@ dataset = {
     ),
 }
 
-params_dataloader = {
-    'batch_size': 128,
-    'shuffle': True,
-    'num_workers': 0,
-    'pin_memory': True,
-}
-
-dataloader = {
-    'train': torch.utils.data.DataLoader(
-        dataset['train'],
-        **params_dataloader
-    ),
-    'test': torch.utils.data.DataLoader(
-        dataset['test'],
-        **params_dataloader
-    ),
-}
-
-def inspect_batch():
-    batch_data, batch_label = next(iter(dataloader['train'])) 
+def inspect_batch(dataloader):
+    batch_data, batch_label = next(iter(dataloader)) 
     fig = plt.figure()
     for i in range(12):
         plt.subplot(3, 4, i+1)
