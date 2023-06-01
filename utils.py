@@ -104,15 +104,15 @@ def train(model, device, train_loader, optimizer, criterion):
         correct += GetCorrectPredCount(pred, target)
         processed += len(data)
 
+        pbar.set_description(desc=(
+            "Train: "
+            f"Loss={loss.item():0.4f} "
+            f"Batch_id={batch_idx} "
+            f"Accuracy={100*correct/processed:0.2f}"
+        ))
+
     train_acc.append(100*correct/processed)
     train_losses.append(train_loss/len(train_loader))
-
-    pbar.set_description(desc=(
-        "Train: "
-        f"Loss={loss.item():0.4f} "
-        f"Batch_id={batch_idx} "
-        f"Accuracy={100*correct/processed:0.2f}"
-    ))
 
 def test(model, device, test_loader, criterion):
     model.eval()
