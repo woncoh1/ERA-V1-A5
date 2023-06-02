@@ -2,12 +2,12 @@
 > Modularize training of a convolutional neural network on MNIST dataset
 - TSAI: https://theschoolof.ai/
 - ERA: Extensive AI: Reimagined and Advanced = EVA + END
-- V1: version 1
-- A5: assignment 5
-- MNIST: [Lecun](http://yann.lecun.com/exdb/mnist/v), [Papers With Code](https://paperswithcode.com/dataset/mnist)
-- CNN: convolutional neural network ([cheatsheet](https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-convolutional-neural-networks))
+- V1: Version 1
+- A5: Assignment 5
+- MNIST: Modified National Institute of Standards and Technology dataset ([Papers With Code](https://paperswithcode.com/dataset/mnist))
+- CNN: Convolutional Neural Network ([cheatsheet](https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-convolutional-neural-networks))
 
-# Install
+# Installation
 - Option 1. To install in Colab, just run the following notebook:  
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/woncoh1/era1a5/blob/main/S5.ipynb)
 
@@ -63,3 +63,8 @@ Estimated Total Size (MB): 3.03
 # Training results
 Test accuracy after the last epoch = 99.48 %:  
 ![training_results2](https://github.com/woncoh1/era1a5/assets/12987758/1502c874-be25-4cd7-a3e9-0e0545779931)
+
+# TODO
+- [ ] Fill in `test_incorrect_pred`
+- [ ] Update `torchsummary` to `torchinfo`
+- [ ] Test `git clone` for local installation
