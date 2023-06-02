@@ -1,18 +1,25 @@
 # TSAI ERA V1 A5: MNIST CNN
 > Modularize training of a convolutional neural network on MNIST dataset
+- TSAI: https://theschoolof.ai/
+- ERA: Extensive AI: Reimagined and Advanced = EVA + END
+- V1: version 1
+- A5: assignment 5
+- MNIST: [Lecun](http://yann.lecun.com/exdb/mnist/v), [Papers With Code](https://paperswithcode.com/dataset/mnist)
+- CNN: convolutional neural network ([cheatsheet](https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-convolutional-neural-networks))
 
 # Install
-- Option 1. To install locally in your machine, use the following command:  
+- Option 1. To install in Colab, just run the following notebook:  
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/woncoh1/era1a5/blob/main/S5.ipynb)
+
+- Option 2. To install locally in your machine, use the following command:  
   ```
   git clone https://github.com/woncoh1/era1a5.git
   ```
-- Option 2. To install in Colab, just run the following notebook:  
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/woncoh1/era1a5/blob/main/S5.ipynb)
 
 # Usage
 - Run the notebook `S5.ipynb` to train and test the model
 - Tweak the hyperparameters, prefixed with `params_`, for the dataloader and optimizer
-- To tweak the model structure, modify the module `model.py`
+- To change the model structure, modify the module `model.py`
 
 # Modules
 - `model.py`: classes representing the convolutional neural network
@@ -28,7 +35,7 @@ A set of sample images with their corresponding labels from a batch of the train
 ![mnist_sample](https://github.com/woncoh1/era1a5/assets/12987758/a1713d31-14fb-4345-91a1-bd1e2875b7bf)
 
 # Model summary
-A summary of the model (the -1s in the output shape refer to the batch size):
+A summary of the model, where output shape = [batch_size, channels, height, width]:
 ```
 ----------------------------------------------------------------
         Layer (type)               Output Shape         Param #
