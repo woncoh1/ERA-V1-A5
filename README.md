@@ -2,19 +2,21 @@
 > Modularize training of a convolutional neural network on MNIST dataset
 
 # Install
+Option 1. To install locally in your machine, use the following command:  
 ```
 git clone https://github.com/woncoh1/era1a5.git
 ```
+Option 2. To install in Colab, just run the following notebook:  
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/woncoh1/era1a5/blob/main/S5.ipynb)
 
 # Usage
 - Run the notebook `S5.ipynb` to train and test the model
 - Tweak the hyperparameters, prefixed with `params_`, for the dataloader and optimizer
-- The class representing the convolutional neural network model is in the `model.py` module
-- The helper functions for the training engine are in the `utils.py` module
+- To tweak the model structure, modify the module `model.py`
 
 # Modules
-- `model.py`
-- `utils.py`
+- `model.py`: classes representing the convolutional neural network
+- `utils.py`: helper functions for the training engine
   - `train`: train for one epoch on the training set
   - `test`: test using the testing set
   - `plot_results`: plot the training and testing loss and accuracy for each epoch
@@ -22,9 +24,11 @@ git clone https://github.com/woncoh1/era1a5.git
 
 
 # Sample images
+A set of sample images with their corresponding labels from a batch of the training set:  
 ![mnist_sample](https://github.com/woncoh1/era1a5/assets/12987758/a1713d31-14fb-4345-91a1-bd1e2875b7bf)
 
 # Model summary
+A summary of the model (the -1s in the output shape refer to the batch size):
 ```
 ----------------------------------------------------------------
         Layer (type)               Output Shape         Param #
@@ -50,4 +54,5 @@ Estimated Total Size (MB): 3.03
 ```
 
 # Training results
+Test accuracy after the last epoch = 99.48 %:  
 ![training_results2](https://github.com/woncoh1/era1a5/assets/12987758/1502c874-be25-4cd7-a3e9-0e0545779931)
