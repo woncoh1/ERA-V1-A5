@@ -2,11 +2,11 @@
 > Modularize training of a convolutional neural network on MNIST dataset
 
 # Install
-Option 1. To install locally in your machine, use the following command:  
-```
-git clone https://github.com/woncoh1/era1a5.git
-```
-Option 2. To install in Colab, just run the following notebook:  
+- Option 1. To install locally in your machine, use the following command:  
+  ```
+  git clone https://github.com/woncoh1/era1a5.git
+  ```
+- Option 2. To install in Colab, just run the following notebook:  
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/woncoh1/era1a5/blob/main/S5.ipynb)
 
 # Usage
