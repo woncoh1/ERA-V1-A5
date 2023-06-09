@@ -1,9 +1,5 @@
 # TSAI ERA V1 A5: MNIST CNN
 > Modularize training of a convolutional neural network on MNIST dataset
-- TSAI: https://theschoolof.ai/
-- ERA: Extensive AI: Reimagined and Advanced = EVA + END
-- V1: Version 1
-- A5: Assignment 5
 - MNIST: Modified National Institute of Standards and Technology dataset ([Papers With Code](https://paperswithcode.com/dataset/mnist))
 - CNN: Convolutional Neural Network ([cheatsheet](https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-convolutional-neural-networks))
 
