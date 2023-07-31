@@ -1,4 +1,4 @@
-# TSAI ERA V1 A5: Modularizing MNIST CNN
+# Modularizing MNIST CNN
 > Modularize training of a convolutional neural network on MNIST dataset
 - MNIST: Modified National Institute of Standards and Technology dataset ([Papers With Code](https://paperswithcode.com/dataset/mnist))
 - CNN: Convolutional Neural Network ([cheatsheet](https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-convolutional-neural-networks))
